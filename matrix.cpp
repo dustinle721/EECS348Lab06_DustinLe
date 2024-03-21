@@ -138,13 +138,12 @@ int main()
 	int size;
 
 	read_matrix_file(matrix_1, matrix_2, size, "matrix_input.txt");
-	// read_matrix_file(matrix_2, size, "matrix_input.txt");
 
-	cout << "Matrix 1:\n ";
+	cout << "Matrix 1: " << endl;
 	display_matrix(matrix_1, size);
 	cout << "\n";
 
-	cout << "Matrix 2:\n ";
+	cout << "Matrix 2: " << endl;
 	display_matrix(matrix_2, size);
 	cout << "\n";
 
