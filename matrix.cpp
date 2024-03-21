@@ -6,7 +6,7 @@ using namespace std;
 const int n = 3;
 
 // part 1
-void read_matrix_file(int matrix_1[n][n], int matrix_2[n][n], int& size, const string filename)
+void read_matrix_file(int matrix_1[n][n], int matrix_2[n][n], int &size, const string filename)
 {
 	ifstream file("matrix_input.txt");
 
@@ -28,7 +28,6 @@ void read_matrix_file(int matrix_1[n][n], int matrix_2[n][n], int& size, const s
 			}
 		}
 		file.close();
-
 	}
 	else
 	{
@@ -47,7 +46,6 @@ void display_matrix(const int matrix[n][n], int size)
 			cout << setw(4) << matrix[i][j] << "";
 		}
 		cout << "\n";
-
 	}
 }
 
@@ -74,7 +72,7 @@ void multiply_matrix(const int matrix_1[n][n], const int matrix_2[n][n], int res
 
 			for (int k = 0; k < n; k++)
 			{
-				result[i][j] = matrix_1[i][k] * matrix_2[k][j];
+				result[i][j] += matrix_1[i][k] * matrix_2[k][j];
 			}
 		}
 	}
@@ -140,7 +138,7 @@ int main()
 	int size;
 
 	read_matrix_file(matrix_1, matrix_2, size, "matrix_input.txt");
-	//read_matrix_file(matrix_2, size, "matrix_input.txt");
+	// read_matrix_file(matrix_2, size, "matrix_input.txt");
 
 	cout << "Matrix 1:\n ";
 	display_matrix(matrix_1, size);
@@ -166,7 +164,7 @@ int main()
 	display_matrix(result, size);
 	cout << "\n";
 
-	update_matrix_element(matrix_1, 0, 0, 10, size);
+	update_matrix_element(matrix_1, 1, 1, 10, size);
 	cout << "Updated Matrix 1: ";
 	cout << "\n";
 	display_matrix(matrix_1, size);
